@@ -1,0 +1,75 @@
+@use "../mixins/breakpoints.scss" as *;
+@use "../misc/colors.scss" as *;
+
+.Section {
+  @include breakpoints(nav mobile) {
+    grid-template-columns: 1fr 15fr 1fr;
+  }
+
+  #home-welcome {
+    display: none;
+  }
+
+  .Container {
+    grid-column: 2;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr 10fr 1fr;
+
+    @include breakpoints(lg_tablet tablet) {
+      max-width: 750px;
+    }
+
+    .Row {
+      grid-column: 2;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+
+      @include breakpoints(huge) {
+        grid-template-columns: 1fr 5fr 1fr;
+        margin: 70px 0;
+      }
+      @include breakpoints(really_big large desktop sm_desktop) {
+        grid-template-columns: 1fr 8fr 1fr;
+        margin: 70px 0;
+      }
+      @include breakpoints(lg_tablet tablet nav mobile) {
+        grid-template-columns: 1fr;
+        margin: 50px 0;
+      }
+
+      .Col {
+        display: grid;
+        width: 100%;
+
+        .ParentSplit {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem 0;
+        }
+
+        @include breakpoints(huge really_big large desktop sm_desktop) {
+          grid-column: 2;
+
+          &__left {
+            grid-column-start: 1;
+          }
+          &__right {
+            grid-column-start: 2;
+          }
+        }
+        @include breakpoints(lg_tablet tablet nav mobile) {
+          grid-column: 1;
+        }
+
+        &__left,
+        &__right {
+          @include breakpoints(lg_tablet tablet nav mobile) {
+            grid-column: 1/3;
+          }
+        }
+      }
+    }
+  }
+}

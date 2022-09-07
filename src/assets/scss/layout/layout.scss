@@ -1,0 +1,12 @@
+@use "../mixins/breakpoints.scss" as *;
+@import 'grid';
+@import 'header';
+
+.main {
+  &.home {
+
+    @include breakpoints(really_big) {
+      padding-top: 70px;
+    }
+  }
+}
