@@ -1,9 +1,7 @@
-<template>
-  about page
-</template>
+<template>about page</template>
 
 <style scoped>
-  * {
-    background-color: green;
-  }
+* {
+  background-color: green;
+}
 </style>

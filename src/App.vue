@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <header class="main-header">
-    <div class="logo">
+    <div>
       <RouterLink to="/">Home</RouterLink>
     </div>
 
@@ -16,9 +16,7 @@ import { RouterLink, RouterView } from "vue-router";
     <nav class="nav-links">
       <ul>
         <li class="nav-link">
-          <RouterLink to="/about">
-            <a>About</a>
-          </RouterLink>
+          <RouterLink to="/about"> About </RouterLink>
         </li>
         <li class="nav-link">
           <RouterLink to="/blog"> Blog </RouterLink>
@@ -26,8 +24,9 @@ import { RouterLink, RouterView } from "vue-router";
       </ul>
     </nav>
   </header>
-
-  <RouterView />
+  <main class="main">
+    <RouterView />
+  </main>
 </template>
 
 <style scoped lang="scss">
@@ -328,5 +327,9 @@ import { RouterLink, RouterView } from "vue-router";
 .no-scroll {
   height: 100%;
   overflow: hidden;
+}
+
+.main {
+  padding-top: 70px;
 }
 </style>

@@ -1,3 +1,1 @@
-<template>
-  This is the navbar
-</template>
+<template>This is the navbar</template>
