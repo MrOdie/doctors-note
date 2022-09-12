@@ -4,9 +4,14 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <header class="main-header">
-    <div>
-      <RouterLink to="/">Home</RouterLink>
-    </div>
+    <RouterLink class="logo" to="/">
+      <img
+        class="logoImg"
+        src="./assets/images/logo.svg"
+        alt="Doctor's Note Logo"
+      />
+      <span class="logoText pad-left-1 headline">Doctor&#39;s Note</span>
+    </RouterLink>
 
     <input type="checkbox" id="menu-btn" class="menu-btn" />
     <label htmlFor="menu-btn" class="menu-icon">
@@ -16,10 +21,13 @@ import { RouterLink, RouterView } from "vue-router";
     <nav class="nav-links">
       <ul>
         <li class="nav-link">
-          <RouterLink to="/about"> About </RouterLink>
+          <RouterLink to="/about">About</RouterLink>
         </li>
         <li class="nav-link">
-          <RouterLink to="/blog"> Blog </RouterLink>
+          <RouterLink to="/blog">Blog</RouterLink>
+        </li>
+        <li class="nav-link">
+          <RouterLink to="/contact">Contact</RouterLink>
         </li>
       </ul>
     </nav>
@@ -32,6 +40,19 @@ import { RouterLink, RouterView } from "vue-router";
 <style scoped lang="scss">
 @use "./assets/scss/misc/colors.scss" as *;
 @use "./assets/scss/mixins/breakpoints.scss" as *;
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  .logoImg {
+    max-width: 35px;
+  }
+
+  .logoText {
+    font-family: "Montserrat SemiBold", Georgia;
+  }
+}
 .main-header {
   position: fixed;
   display: flex;
@@ -54,20 +75,6 @@ import { RouterLink, RouterView } from "vue-router";
 
   @include breakpoints(mobile) {
     padding: 0 4vw;
-  }
-
-  .logo {
-    .logo-img {
-      display: block;
-      @include breakpoints(
-        really_big large desktop sm_desktop lg_tablet tablet nav
-      ) {
-        width: 260px;
-      }
-      @include breakpoints(mobile) {
-        width: 190px;
-      }
-    }
   }
 
   a {
@@ -327,9 +334,5 @@ import { RouterLink, RouterView } from "vue-router";
 .no-scroll {
   height: 100%;
   overflow: hidden;
-}
-
-.main {
-  padding-top: 70px;
 }
 </style>

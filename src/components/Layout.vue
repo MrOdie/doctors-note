@@ -30,21 +30,5 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @use "../assets/scss/misc/colors.scss";
-.container {
-  display: grid;
-  grid-template-columns: 2fr 5fr 2fr;
-  grid-template-rows: 50px auto 50px;
-  .row {
-    grid-column: 2;
-    grid-row: 2;
-    display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
 
-    .col {
-      grid-column: 2;
-      display: grid;
-
-    }
-  }
-}
 </style>

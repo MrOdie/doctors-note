@@ -9,7 +9,7 @@ const testing = () => {
 <template>
   <Layout :backgroundColor="'backgroundColorMain'">
     <div id="home-page">
-      <h1>Home Page, Johnson.</h1>
+      <h3 class="h1">Home Page, Johnson.</h3>
     </div>
   </Layout>
 </template>
@@ -19,9 +19,3 @@ const testing = () => {
   background-color: green;
 }
 </style>
-
-export default {
-  components: {
-    Layout
-  }
-}
