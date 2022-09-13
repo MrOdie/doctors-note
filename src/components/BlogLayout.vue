@@ -4,7 +4,10 @@
   <section class="container__blog">
     <article class="row">
       <div class="col">
-        <div class="blogList">
+        <div class="blog__title">
+          <h3 class="h1">Blog Page</h3>
+        </div>
+        <div class="blog__list">
           <div class="blogs">
             <p class="h6">Blog Title</p>
             <p>
@@ -82,18 +85,24 @@
 </template>
 
 <style lang="scss">
-.blogList {
-  display: flex;
-  flex-flow: wrap;
-  flex-direction: row;
-  justify-content: space-evenly;
-
-  .blogs {
+.blog {
+  &__list {
     display: flex;
-    flex-direction: column;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 33.333%;
+    flex-flow: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+
+    .blogs {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 28%;
+      margin-bottom: 2rem;
+      border: 2px solid #333;
+      border-radius: 10px;
+      padding: 15px;
+    }
   }
 }
 </style>

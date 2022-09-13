@@ -1,20 +1,18 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-    // type inference enabled
-    props: {
-      backgroundColor: String,
-  },
+  // type inference enabled
   computed: {
     backgroundColor(): any {
-      const backgroundColor = 'child1'
-     return [...backgroundColor]
-    }
+      const backgroundColor = "child1";
+      return [...backgroundColor];
+    },
   },
   mounted() {
-    this.backgroundColor // type: string | undefined
-  }
+    this.backgroundColor; // type: string | undefined
+  },
+
 });
 </script>
 
@@ -30,5 +28,4 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @use "../assets/scss/misc/colors.scss";
-
 </style>
