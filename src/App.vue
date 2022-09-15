@@ -1,5 +1,30 @@
-<script setup lang="ts">
+<script lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+import { defineComponent } from "vue";
+import * as _ from "lodash";
+
+export default defineComponent({
+  methods: {
+    handleScroll(event: Event) {
+      // Any code to be executed when the window is scrolled
+      this.checkScrollOffset(window.scrollY);
+    },
+    checkScrollOffset(num: number) {
+      const header = document.querySelector(".main-header");
+      if (header) {
+        num > 10 ? header.classList.add('scrolled') : header.classList.remove('scrolled');
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener("scroll", _.debounce(this.handleScroll, 1));
+  },
+  beforeUnmount() {
+    // I switched the example from `destroyed` to `beforeDestroy`
+    // to exercise your mind a bit. This lifecycle method works too.
+    window.removeEventListener("scroll", _.debounce(this.handleScroll, 1));
+  },
+});
 </script>
 
 <template>

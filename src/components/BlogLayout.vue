@@ -1,4 +1,17 @@
-<script setup lang="ts"></script>
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+
+  computed: {
+    truncateDescription(str: string): any {
+      console.log(str);
+
+      return str;
+    }
+  }
+});
+</script>
 
 <template>
   <section class="container__blog">
@@ -11,14 +24,7 @@
           <div class="blogs">
             <p class="h6">Blog Title</p>
             <p>
-              Bacon ipsum dolor amet short ribs shoulder sausage, pork loin
-              tri-tip chuck t-bone pastrami chislic strip steak ground round
-              shankle ham pork. Picanha pig salami strip steak meatloaf pork
-              chop prosciutto tenderloin tongue. Buffalo shoulder venison
-              hamburger. Short ribs venison kevin fatback hamburger prosciutto
-              boudin. Sausage pork chop short ribs chuck venison, shoulder
-              ground round beef ribs. Pancetta shankle cow tri-tip, frankfurter
-              pig ham shoulder tenderloin buffalo.
+              {{truncateDescription("Bacon ipsum dolor amet short ribs shoulder sausage, pork lointri-tip chuck t-bone pastrami chislic strip steak ground round shankle ham pork. Picanha pig salami strip steak meatloaf pork chop prosciutto tenderloin tongue. Buffalo shoulder venison hamburger. Short ribs venison kevin fatback hamburger prosciutto boudin. Sausage pork chop short ribs chuck venison, shoulder ground round beef ribs. Pancetta shankle cow tri-tip, frankfurter pig ham shoulder tenderloin buffalo.")}}
             </p>
             <button>View Blog</button>
           </div>
